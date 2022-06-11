@@ -1,0 +1,12 @@
+{% extends "blog/base.html" %}
+{% block content %}
+    <form action="/blog/recibido" method="GET">
+        <input type="email" name = "email" placeholder="Email:" />
+        <textarea name="reclamo" cols="10" rows="10"></textarea>
+        <button type = "submit"> Enviar</button>
+    </form>
+    <h2> {{mensaje}} </h2>
+    <h2> Correo ingresado : {{email}} </h2>
+    <h2> Reclamo: {{comentario}} </h2>
+   
+{% endblock content %}

@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.contrib.auth.forms import UserCreationForm
 from .forms import UserRegistrationForm
 from django.contrib.auth.decorators import login_required
+
+
 def registro(request):
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)

@@ -21,7 +21,7 @@ from user import views as user_views
 from django.contrib.auth import views as auth_views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('blog/', include('blog.urls')),
+    path('', include('blog.urls')),
     path('<int:numero1>/<int:numero2>/', views.sumar ),
     path('registro/', user_views.registro, name = 'registro'),
     path('login/', auth_views.LoginView.as_view(template_name = 'user/login.html') , name = 'login'),

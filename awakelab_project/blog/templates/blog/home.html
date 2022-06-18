@@ -3,6 +3,7 @@
 {% for i in posts %}
     <article class="media content-section">
     <div class="media-body">
+        <img src="{{i.autor.perfil.image.url}}" class = "rounded-circle account-img"alt="">
         <div class="article-metadata">
         <a class="mr-2" href="#">{{ i.autor }}</a>
         <small class="text-muted">{{ i.fecha_publicacion }}</small>

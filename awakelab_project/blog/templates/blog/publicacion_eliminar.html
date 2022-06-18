@@ -1,0 +1,10 @@
+{% extends "blog/base.html" %} 
+{% block content %} 
+    <article class="media content-section">
+        <form  method="POST">
+            {% csrf_token %}
+            <h2> Estas seguro que quieres eliminar la publicacion: {{object.titulo}} ??</h2>
+            <button type = "submit"> eliminar</button>
+            <a class = "btn btn-outline- secondary" href="{% url 'publicacion-detalle' object.id %}"></a>
+        </form>
+{% endblock content%}

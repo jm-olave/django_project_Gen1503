@@ -1,8 +1,9 @@
+
 from django.shortcuts import render
 from django.contrib.auth.forms import UserCreationForm
 from .forms import UserRegistrationForm
 from django.contrib.auth.decorators import login_required
-
+from django.contrib.auth.models import Group
 
 def registro(request):
     if request.method == 'POST':
@@ -12,7 +13,9 @@ def registro(request):
            usuario = form.cleaned_data.get('username')
            print(usuario) 
     form = UserRegistrationForm()
-    return render(request, 'user/register.html', {'form': form })
+     # definir grupo del usuario 
+    group = Group.objects.all()
+    return render(request, 'user/register.html', {'form': form, 'group': group})
 # Create your views here.
 
 @login_required

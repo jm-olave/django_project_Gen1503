@@ -4,5 +4,8 @@
 <div class = "content-section">
     <h1>Pagina de perfil</h1>
     <h2>{{user.username}}</h2>
+    <div class ='media'>
+        <img src="{{user.perfil.image.url}}" class ='rounded-circle account-img' alt="alt.jpg">
+    </div>
 </div>
 {% endblock content %}

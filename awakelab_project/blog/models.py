@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
 from django.utils import timezone
 # Create your models here.
 class Publicacion(models.Model):
@@ -10,6 +11,8 @@ class Publicacion(models.Model):
 
     def __str__(self):
         return self.titulo
+    def get_absolute_url(self):
+        return reverse('publicacion-detalle', kwargs = {'pk': self.pk} )
 
 
 class Reclamo(models.Model):
@@ -18,3 +21,6 @@ class Reclamo(models.Model):
 
     def __str__(self):
         return self.nombre
+
+
+
